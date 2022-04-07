@@ -3282,14 +3282,14 @@ int main(int argc, char *argv[]) {
     if (strcmp(hydra_options.service, "irc") == 0)
       i = 1;
     if (strcmp(hydra_options.service, "rdp") == 0) {
-      if (hydra_options.tasks > 4)
+      if (hydra_options.tasks > 100)
         fprintf(stderr, "[WARNING] rdp servers often don't like many connections, use -t 1 "
                         "or -t 4 to reduce the number of parallel connections and -W 1 or "
                         "-W 3 to wait between connection to allow the server to recover\n");
-      if (hydra_options.tasks > 4) {
+      if (hydra_options.tasks > 100) {
         fprintf(stderr, "[INFO] Reduced number of tasks to 4 (rdp does not "
                         "like many parallel connections)\n");
-        hydra_options.tasks = 4;
+        hydra_options.tasks = 100;
       }
       if (conwait == 0)
         hydra_options.conwait = conwait = 1;
