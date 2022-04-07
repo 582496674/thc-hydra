@@ -222,8 +222,8 @@ char *SERVICES = "adam6500 asterisk afp cisco cisco-enable cobaltstrike cvs fire
 #define TASKS 16
 #define SKIPLOGIN 256
 #define USLEEP_LOOP 10
-#define MAX_LINES 50000000  // 50 millions, do not put more than 65millions
-#define MAX_BYTES 500000000 // 500 millions, do not put more than 650millions
+#define MAX_LINES 10000000000  // 50 millions, do not put more than 65millions
+#define MAX_BYTES 100000000000 // 500 millions, do not put more than 650millions
 
 #define RESTOREFILE "./hydra.restore"
 
