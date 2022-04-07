@@ -185,11 +185,18 @@ int32_t bf_init(char *arg) {
 uint64_t bf_get_pcount() {
   int32_t i;
   double count = 0;
+  uint64_t foo;
 
   for (i = bf_options.from; i <= bf_options.to; i++)
     count += (pow((double)bf_options.crs_len, (double)i));
+  if (count >= 0xffffffff) {
+    fprintf(stderr, "\n[ERROR] definition for password bruteforce (-x) "
+                    "generates more than 4 billion passwords - this is not a bug in the program, it is just not feasible to try so many attempts. Try a calculator how long that would take. duh.\n");
+    exit(-1);
+  }
 
-  return count;
+  foo = count / 1;
+  return foo;
 }
 
 char *bf_next() {
